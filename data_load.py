@@ -11,7 +11,7 @@ test = pd.read_csv(os.path.join(data_dir,'test.csv'))
 
 width = 32
 height = 32
-channel = 1
+channel = 3
 
 def train_load():
 	temp = []
@@ -19,7 +19,7 @@ def train_load():
 	for image_name in train.image:
 		image_path = os.path.join(data_dir,"train",image_name)
 		image = cv2.imread(image_path)
-		image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+		image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 		image = cv2.resize(image,(width,height))
 		temp.append(image)
 
@@ -39,7 +39,7 @@ def test_load():
 	for image_name in test.image:
 		image_path = os.path.join(data_dir,"test",image_name)
 		image = cv2.imread(image_path)
-		image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+		image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 		image = cv2.resize(image,(width,height))
 		temp.append(image)
 

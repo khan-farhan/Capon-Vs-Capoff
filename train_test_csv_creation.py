@@ -5,7 +5,7 @@ path = os.getcwd() + "/Dataset/"
 
 df_capoff = pd.read_csv(os.path.join(path,"Capoff.csv"))
 df_capon = pd.read_csv(os.path.join(path,"CapON.csv"))
-df_nothing = pd.read_csv(os.path.join(path,"nothing.csv"))
+
 
 #df_test =df_capoff.ix[182:186]
 
@@ -19,7 +19,7 @@ df_nothing = pd.read_csv(os.path.join(path,"nothing.csv"))
 
 df = df_capon.tail(10)
 df_test = df.append(df_capoff.tail(10), ignore_index = False)
-#df_test = df_test.append(df_nothing.tail(10), ignore_index = False)
+
 
 
 df_train = pd.concat([df_capoff,df_capon,df_test]).drop_duplicates(keep = False)
