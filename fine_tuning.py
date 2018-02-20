@@ -56,11 +56,9 @@ print(acc)
 
 output = []
 for list in predicted:
-    if list[0] == max(list[0],list[1]):
+    if list[0] > list[1]:
         output.append('CapOFF')
-    elif list[1] == max(list[0],list[1]):
-        output.append('CapON')
     else:
-        output.append('Nothing')
+        output.append('Capon')
 
 print(predicted)
